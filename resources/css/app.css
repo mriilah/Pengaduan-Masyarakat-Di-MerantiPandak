@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== CLEAN MINIMAL DESIGN SYSTEM ===== */
+
+/* Base */
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        background-color: #FFFFFF;
+        color: #1a1a1a;
+        font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #F3F4F6;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #D1D5DB;
+        border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #9CA3AF;
+    }
+}
+
+/* Components */
+@layer components {
+    /* Primary Black Button (like "Get started" in mockup) */
+    .btn-primary-dark {
+        background-color: #111111;
+        color: #FFFFFF;
+        padding: 10px 20px;
+        font-weight: 500;
+        font-size: 14px;
+        border: 1px solid #111111;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .btn-primary-dark:hover {
+        background-color: #333333;
+    }
+
+    /* Secondary/Outline Button (like "Learn more" in mockup) */
+    .btn-outline-light {
+        background: #FFFFFF;
+        color: #111111;
+        border: 1px solid #E5E7EB;
+        padding: 10px 20px;
+        font-weight: 500;
+        font-size: 14px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .btn-outline-light:hover {
+        border-color: #D1D5DB;
+        background-color: #F9FAFB;
+    }
+}
+
+/* Fix Leaflet map tiles broken by Tailwind's preflight CSS reset */
+.leaflet-container img {
+    max-width: none !important;
+    max-height: none !important;
+}
+.leaflet-container {
+    z-index: 0;
+}
+
+/* Light Leaflet Popups */
+.leaflet-popup-content-wrapper {
+    background: #FFFFFF !important;
+    color: #1a1a1a !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1) !important;
+    border: 1px solid #E5E7EB !important;
+}
+.leaflet-popup-tip {
+    background: #FFFFFF !important;
+}
+.leaflet-popup-content {
+    font-family: 'Inter', 'Roboto', sans-serif !important;
+    font-size: 0.85rem !important;
+    color: #1a1a1a !important;
+}
+
+/* Form overrides for light theme */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+select,
+textarea {
+    background-color: #FFFFFF !important;
+    border-color: #E5E7EB !important;
+    color: #1a1a1a !important;
+    border-radius: 8px !important;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #111111 !important;
+    box-shadow: 0 0 0 1px #111111 !important;
+    --tw-ring-color: #111111 !important;
+}
+input::placeholder,
+textarea::placeholder {
+    color: #9CA3AF !important;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+    background-color: #FFFFFF !important;
+    border-color: #D1D5DB !important;
+    border-radius: 4px !important;
+}
+input[type="checkbox"]:checked {
+    background-color: #111111 !important;
+    border-color: #111111 !important;
+}
+
+/* File input */
+input[type="file"]::file-selector-button {
+    background-color: #F3F4F6 !important;
+    color: #1a1a1a !important;
+    border: 1px solid #E5E7EB !important;
+    border-radius: 6px !important;
+    padding: 8px 16px !important;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+input[type="file"]::file-selector-button:hover {
+    background-color: #E5E7EB !important;
+}
+
+/* Select dropdown arrow */
+select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e") !important;
+}
+
+/* Pagination overrides */
+nav[role="navigation"] span,
+nav[role="navigation"] a {
+    border-radius: 8px !important;
+}

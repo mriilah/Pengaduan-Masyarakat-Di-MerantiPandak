@@ -1,0 +1,14 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "username": "pengaduan-dev",
+  "instructions": [
+    "AGENTS.md"
+  ],
+  "permission": {
+    "bash": "ask"
+  },
+  "compaction": {
+    "auto": true,
+    "tail_turns": 15
+  }
+}
